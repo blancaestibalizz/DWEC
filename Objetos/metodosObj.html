@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> objetos </title>
+    </head>
+    <body>
+       
+        <script>
+            const keys=["name","life","power"];
+            const values=["otto", 56,90, function(){return "hola"}];
+
+            const entries =[];
+            for(let i of Object.keys(keys)){
+                const key=keys[i];
+                const value=values[i];
+                entries.push([key, value]);
+            }
+            const user=Object.fromEntries(entries);
+        </script>
+    </body>
