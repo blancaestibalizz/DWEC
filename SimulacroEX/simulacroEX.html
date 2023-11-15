@@ -18,21 +18,28 @@
                 -La cadena de palabras se compone únicamente de caracteres en miúsculas y mayúsculas
             Obtener el cifrado de la palabra Autenticacion y colocarlo en una línea de comentario, al final del código
             */
-            var cod="pe";
-            var palabra="Autenticacion";
-            var vocales=[a,e,i,o,u];
-            function codificacion(palabra)
-            {
-                if (typeof(palabra)==String)
-                {
-                    for(var i=0;i<=palabra.length;i++)
-                    {
 
+            function codi(palabra){
+                var miArray=["pe"];
+                vocales="aeiouAEIOU";
+
+                // Divide la palabra en un array de letras
+                palabra.split("");
+
+                for(var i=0;i<=palabra.length;i++){
+                    // Añade la letra actual al array con el push
+                    miArray.push(palabra[i]);
+
+                    // Si la letra actual es una vocal y la siguiente letra no es una vocal y la siguiente letra no es la última letra de la palabra
+                    if(vocales.includes(palabra[i]) && !vocales.includes(palabra[i+1]) && i+1 !=palabra.length)
+                    {
+                        miArray.push("pe");
                     }
-                    palabra.substring(0,1)
                 }
-                
+                // Devuelve el array de letras codificadas como una cadena
+                return miArray.join("");
             }
+            alert(codi("Autenticacion"))
 
         </script>
     </body>
