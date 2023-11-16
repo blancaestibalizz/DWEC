@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title> funciones dentro de var </title>
+    </head>
+    <body>
+        <script>
+            function perimetroRectangulo(b,a)
+            {
+                    a=parseFloat(a);
+                    b=parseFloat(b);
+                if(a.toFixed(2) && b.toFixed(2))
+                    return 2*(b+a);
+                else 
+                    alert("No tiene dos decimales");
+            }
+            alert("Base: 11.50 y altura: 2.00: "+perimetroRectangulo(11.50, 2.00));
+            alert("Base: 1.10 y altura: 6.00: "+perimetroRectangulo(1.10, 6.00));
+            alert(perimetroRectangulo(2.20, 1.10));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title> funciones dentro de var </title>
+    </head>
+    <body>
+        <script>
+            var hexadecimal=0xF4;
+            var inf=2;
+            while(inf!=Infinity){
+                console.log(inf);
+                inf=inf*inf;
+            }
+            var div1=2, div2=0;
+            alert("div 2/0: "+ 2/0);
+            alert("div -2/0: "+(-2/0));
+            alert("tipo"+typeof(div1/div2));
+
+            let var1=100/"casa";
+            let var2=100/"10";
+            alert("100/'casa': "+var1);
+            alert("100/'10': "+var2);
+            alert("nan: "+isNaN(var1));
+            alert("tipo es nan"+ typeof(var2))//nan tipo number
+        
+        </script>
+    </body>
+</html>

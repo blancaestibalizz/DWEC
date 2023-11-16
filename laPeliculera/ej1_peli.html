@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
-        <title> peli </title>
-    </head>
-        <body>
-            <script>
-                var nombre =prompt("Nombre: ");
-               while (!isNaN(nombre) || nombre=="")
-               {
-                    alert("No es un nombre correcto, vuelve a introducirlo");
-                    nombre =prompt("Nombre: ");                
-               }
-                    console.log("Hola "+nombre);
-                var edad =parseInt(prompt("Edad: "));
-                while(isNaN(edad)||edad==null)
-                {
-                    alert("No es un número, vuelve a introducir la edad");
-                    edad =prompt("Edad: "); 
-                }
-                console.log("Tienes "+edad+ " años");
-            </script>
-                <h1>Peliculas</h1>
-                <p>Spider Man</p>
-                <p>Superman</p>
-                <p>Dragon Ball Super</p>
-                <p>La era del hielo</p>
-                <p>18videos</p>
-            <script>
-                var peli =prompt("¿Qué pelicula quieres escoger?\n1.Spider Man\n2.Superman\n3.Dragon Ball Super\n4.La era del hielo\n5.18videos");
-                //peliculas= ["Spider Man","Superman","Dragon Ball Super","La era del hielo", "18videos"];
-                /*for(i=0;peli!==peliculas[i];i++)
-                {
-                    if(peliculas[i]!==peli || peli==null)
-                    {
-                        console.log("Pelicula no disponible");
-                        peli =prompt("¿Qué pelicula quieres escoger? ");
-                    }
-                    else break;
-                }*/
-                do{
-                        console.log("Pelicula no disponible");
-                        peli =parseInt(prompt("¿Qué pelicula quieres escoger?\n1.Spider Man\n2.Superman\n3.Dragon Ball Super\n4.La era del hielo\n5.18videos"));
-                }while (peli!==1||peli!== 2||peli!==3 ||peli!==4 ||peli!==5||peli==null)
-                while (peli==5 && edad<=17)
-                {
-                    alert("Eres menor de edad, no puedes ver esta película")
-                    peli =parseInt(prompt("¿Qué pelicula quieres escoger?\n1.Spider Man\n2.Superman\n3.Dragon Ball Super\n4.La era del hielo\n5.18videos"));
-                }
-                alert("Has escogido "+peli);
-                var entrada=8.5;
-                var caramelos;
-                var refrescos;
-                var palomitas;
-                var perrito;
-                if(edad<=17)
-                {
-                    entrada=(entrada*50/100)-entrada;
-                    caramelos= true;
-                    refresco=true;
-                }
-            </script>
-        </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+    <title> peli </title>
+</head>
+
+<body>
+    <script>
+        var nombre = prompt("Nombre: ");
+        let edad;
+        while (isNaN(edad) || edad === null) 
+        {
+            edad = parseInt(prompt("Edad:"));
+        } 
+
+        const peliculas = [1, 2, 3, 4, 5];
+        const comidasBebidas = {"Caramelos":false,"Refresco": false,"Palomitas":false,"Perrito":false,"Agua":false};
+
+        let peli;
+        while (!peliculas.includes(peli) || peli=== null){
+            peli = parseInt(prompt("Película:\n1. Spider Man\n2. Superman\n3. Dragon Ball Super\n4. La era del hielo\n5. 18videos"));
+        } 
+
+        if (peli===5 && edad<=17) {
+            console.log("No tienes la edad necesaria para ver esta pelicula");
+            peli = parseInt(prompt("Película:\n1. Spider Man\n2. Superman\n3. Dragon Ball Super\n4. La era del hielo\n5. 18videos"));
+        } 
+        else 
+        {
+            // Calcula el descuento y regalos según la edad
+            let descuento = 0;
+            let regalos = [];
+
+            if (edadCliente <= 17) {
+                descuento = 50;
+                regalos.push("Caramelos", "Refresco");
+            } else if (edadCliente >= 18 && edadCliente <= 25) {
+                regalos.push("Palomitas", 'Perrito', "Refresco");
+            } else if (edadCliente >= 26 && edadCliente <= 35) {
+                descuento = 10;
+                regalos.push("Perrito", "Refresco");
+            } else if (edadCliente >= 36) {
+                descuento = 20;
+                regalos.push("Agua");
+            }
+
+            // Calcula el precio total con descuento
+            const precioEntrada = 8.5;
+            const precioConDescuento = precioEntrada - (precioEntrada * descuento / 100);
+
+            // Imprime los resultados en consola y HTML
+            console.log(`Nombre del cliente: ${nombreCliente}`);
+            console.log(`Película seleccionada: ${peliculaSeleccionada}`);
+            console.log(`Regalos incluidos: ${regalos.join(', ')}`);
+            console.log(`Total a pagar: ${precioConDescuento.toFixed(2)} euros`);
+
+            // Imprimir en HTML
+            document.getElementById('resultado').innerHTML = `
+        <p>Nombre del cliente: ${nombreCliente}</p>
+        <p>Película seleccionada: ${peliculaSeleccionada}</p>
+        <p>Regalos incluidos: ${regalos.join(', ')}</p>
+        <p>Total a pagar: ${precioConDescuento.toFixed(2)} euros</p>
+    `;
+        }
+
+    </script>
+</body>
+
 </html>

@@ -1,0 +1,44 @@
+JavaScrip tipado
+variables, operadores, tipos de datos, 
+cambios de tipod de variables
+funciones, tipo de funciones, anonima, flecha..., el this
+estructuras de control
+errores
+metodos 
+objetos nativos y de alto nivel(2ev)/metodos propios y generales, genericos
+ob definidos por el usuario, como llegar a sus metodos declarar...
+prototipos, prototype
+JSON distingir comillas, saber lo que es valido, metodos
+destructuracion en array , objetos...
+metodos de array
+array
+HOISTING
+ambito en las variables (escope)
+sombreado de variables
+operadores logicos
+null, NaN
+operador ternario
+parse...
+conversiones implícitas
+coerción
+template literals
+tofixed toprecision
+prom
+fechas
+parámetros por defecto
+las condiciones y bucles
+Math
+tipos de for
+breack y continius en switch
+try catch tipos de errores/throw
+meses empieza por 0
+metodos de busqueda de string, de comparación, de extracción
+call, apply y bind
+prototipos
+destructuracion de objetos
+pop y shift delete (metodos de arrays)
+como recorrer un array...
+
+
+
+

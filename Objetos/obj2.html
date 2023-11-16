@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> objetos </title>
+    </head>
+    <body>
+       
+        <script>
+
+           function Persona(nom, ape, ed){
+            this.nombre=nom;
+            this.apellido=ape;
+            this.edad=ed;
+            this.nombreCompleto=function(){
+                return this.nombre+" "+this.apellido;
+            }
+           }
+           
+           var Ana = new Persona("Ana", "Hoyo", "23");
+           var Paco=new Persona("Paco", "Martínez", "27");
+
+           Ana.nacionalidad="Inglesa";
+
+           alert(Ana.nacionalidad);
+           alert(Paco.nombreCompleto());
+
+           //Persona.prototype.fecha=
+        </script>
+    </body>
+    </html>

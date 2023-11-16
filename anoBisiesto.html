@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title> funciones dentro de var </title>
+    </head>
+    <body>
+        <script>
+            var num=2345;
+            //var año= prompt("¿Qué año quieres saber si es bisiesto o no?")
+            function esBisiesto(anyo)
+            {
+                if(anyo%4==0 || anyo-(anyo.toString().slice(-2)=='00') && anyo%400==0)
+                    return 1;
+                else 
+                    return 0;
+            }
+            alert("4: "+esBisiesto(4));
+            alert("2000: "+esBisiesto(2000));
+            alert("2011: "+esBisiesto(2011));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos</title>
+</head>
+<body>
+
+<script>
+
+function tvSamsung(nom, cat, unidades, precio) {
+    this.nombre = nom;
+    this.categoria = cat;
+    this.unidades = unidades;
+    this.precio = precio;
+    this.valorTotal = function () {
+        return this.unidades * this.precio;
+    };
+}
+
+let samsung = new tvSamsung("TV Samsung 42”", "Televisores", 4, 345.95);
+console.log("Samsung: " + samsung.valorTotal());
+
+function Productos(nom, cat, unidades, precio) {
+    this.nombre = nom;
+    this.categoria = cat;
+    this.unidades = unidades;
+    this.precio = precio;
+    this.valorTotal = function () {
+        return this.unidades * this.precio;
+    };
+    this.getInfo = function () {
+        return this.nombre + "(" + this.categoria + "):" + this.unidades + "x" + this.precio + "=" + this.valorTotal() + "€";
+    };
+}
+
+let prod1 = new Productos("Lavadora LG", "Lavadora", 6, 130);
+let prod2 = new Productos("Batidora Nma", "Batidora", 2, 70);
+let prod3 = new Productos("Aspiradora Logitech", "Aspiradora", 9, 200);
+
+console.log("Prod1: " + prod1.getInfo());
+console.log("Prod2: " + prod2.getInfo());
+console.log("Prod3: " + prod3.getInfo());
+
+function Televisores(nom, cat, unidades, precio, tam) {
+    Productos.call(this, nom, cat, unidades, precio);
+    this.tamanio = tam;
+}
+
+Televisores.prototype = Object.create(Productos.prototype);
+
+Televisores.prototype.getInfo = function () {
+    return this.nombre + " " + this.tamanio + "(" + this.categoria + "):" + this.unidades + "x" + this.precio + "=" + this.valorTotal() + "€\n";
+};
+
+Televisores.prototype.toString = function () {
+    return this.nombre + " con categoría " + this.categoria + " y tamaño de " + this.tamanio + " pulgadas. El importe es: " + this.valorTotal() + "€\n";
+};
+
+Productos.prototype.toString = function () {
+    return this.nombre + " con categoría " + this.categoria + ". El importe es: " + this.valorTotal() + "€\n";
+};
+
+let arr = [
+    new Productos("Television LG", "Television", 2, 300),
+    new Productos("Cafetera DolceGusto", "Cafetera", 8, 70),
+    new Productos("Horno Bosch", "Horno", 4, 550),
+    new Productos("Batidora Smeg", "Batidora", 9, 200),
+    new Productos("Lavadora Balay", "Lavadora", 7, 250)
+];
+
+function prodOrdenPorNombre() {
+    return arr.sort(function (a, b) {
+        return a.nombre - b.nombre;
+    });
+}
+function prodOrdenPorPrecio() {
+    return arr.sort(function (a, b) {
+        return a.precio - b.precio;
+    });
+}
+function prodPrecioTotal() {
+    return arr.sort(function (a, b) {
+        return a.valorTotal() - b.valorTotal();
+    });
+}
+function prodConMenosUnidades() {
+    return arr.sort(function (a, b) {
+        return a.valorTotal() - b.valorTotal();
+    });
+}
+
+alert(prodPrecioTotal());
+
+</script>
+</body>
+</html>

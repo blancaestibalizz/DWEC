@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title> Practica 101 </title>
+    </head>
+    <body>
+        <script>
+            function saludar()
+            {
+                var saludo="Hola";
+                alert(saludo);
+            }
+            saludar();
+            window.alert(saludo);
+        </script>
+        <script>
+            var despedida="Adiós";//variable global
+            function despedir()
+            {
+                alert(despedida);
+            }
+            despedir();
+            console.log(despedida);
+        </script>
+        <script>
+            function ámbito()
+            {
+                var hola="Dentro de la función";
+                window.alert(hola);
+            }
+            var hola="Fuera de la función";
+            window.alert(hola);
+            ámbito();
+        </script>
+        <script>
+            var variable="si";
+            function redefinir()
+            {
+                var variable="no";
+                window.alert(variable);
+            }
+            window.alert(variable);
+            window.alert(redefinir(variable));
+        </script>
+    </body>
+</html>

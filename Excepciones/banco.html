@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title> Excepciones </title>
+    </head>
+    <body>
+       
+        <script>
+           /*try{
+            alert('Inicio de sesión de sentancia del try');
+                Hola_caracola;
+            alert('Fin de la sentancias de try (si/ )');//(2)
+           }
+           catch(err){
+            alert('¡Uh error ha ocurrido!');
+            alert(err.name); //El nombre del error
+            alert(err.message); //El tipo de error
+            alert(err.stack); //Sale toda la información del error
+           }*/
+           let saldo=350;
+           function retirar(saldo,cantidad)
+           {
+                if (saldo<cantidad)
+                {
+                    throw "Saldo insuficiente";
+                }
+                else
+                    return saldo-cantidad;
+            }
+            try{
+                let cantidad=prompt();
+                saldo=retirar(saldo,cantidad);
+                alert("Su operación ha sido ejecutada con éxito.\nSaldo: "+saldo)
+            }
+            catch(err)
+            {
+                alert(err);
+            }
+           
+           resultado=retirar(saldo,cantidad);
+           if(resultado==false)
+                alert('Saldo insuficiente');
+           else
+                alert(saldo=resultado);
+        </script>
+    </body>
+    </html>

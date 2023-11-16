@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title> Fechas </title>
+    </head>
+    <body>
+       
+        <script>
+            var fecha1=new Date();
+            var fecha2=new Date("May 07 1990");
+            
+            var resultado=(((((fecha1.getTime()-fecha2.getTime())/60)/60)/24)/1000);
+            alert (resultado.toFixed(0)+" días han pasado.");
+        </script>
+    </body>
+    </html>
