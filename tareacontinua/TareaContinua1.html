@@ -28,10 +28,11 @@
                 correo: "risus.Quisque@urna.ca"
             };
 
+            //subir contacto al array
             contactos.push(contacto4);
             
             for(i=0; i<=contactos.length;i++){
-                if (i==0 || i==(contactos.length-1))
+                if (i==0 || i==(contactos.length-1))//si es i es 0 (primer contacto) o i es el ultimo contacto mostrar
                 console.log(contactos[i].nombre + " / " + contactos[i].telefono + " / " + contactos[i].correo);
             }
         </script>
