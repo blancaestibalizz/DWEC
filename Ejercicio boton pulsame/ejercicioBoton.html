@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Web boton "Pulsame" </title>
+    </head>
+    <body>
+        <!--
+            Ejercicio
+            Web botón “púlsame”
+                1. Si es pulsado: la página cambiar de color(aleatorio)
+                2. Si se pulsa en cualquier otra parte: la página vuelve a ser de color blanco
+                3. evento (event) muestre la posición del ratón
+         -->
+         <input id="boton" value="boton" type="button"/>
+         <div id="demo"></div>
+        <script>
+            if (event.target==document.innerHTML("boton"))
+            {   document.getElementById("boton").addEventListener("click", color, false);
+                function color()
+                {
+                    document.body.style.background=cambiarColor();
+                }
+                
+            }
+            else if (event.target!==document.innerHTML("boton"))
+            {   document.body.addEventListener("click", color2, false)
+                function color2()
+                {
+                    document.body.style.background="white";
+                }
+            }
+            function cambiarColor(){
+                numero1=parseInt((Math.random() * 256), 16);//Math.random() * 256)
+                numero2=parseInt((Math.random() * 256), 16);
+                numero3=parseInt((Math.random() * 256), 16);
+                return "#"+numero1+numero2+numero3;
+            }
+            let x = 0;
+            let y = 0;
+            
+            document.getElementById("demo").addEventListener("mouseover", posicion, false);
+            function posicion(){
+
+            }
+        </script>
+    </body>
+</html>
