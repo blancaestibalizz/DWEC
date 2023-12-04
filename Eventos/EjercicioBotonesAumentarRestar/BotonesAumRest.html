@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Eventos </title>
+    </head>
+    <body>
+        <input id="botonAum" value="Aumentar" type="button"/>
+        <input id="botonRest" value="Restar" type="button"/>
+        
+        <script>
+            
+            var cont=0;
+            document.getElementById("botonAum").addEventListener("click", pulsar);
+            document.getElementById("botonRest").addEventListener("click", pulsar);
+
+            function pulsar(e){
+
+                
+                if(e.target.id=="botonAum") cont++;
+                else if (e.target.id=="botonRest") cont--;
+
+                console.log(cont);
+            }
+            /*function pulsar(e){
+                switch(e.type){
+                    case "mouseover":
+                        this.style.color='red';
+                        break;
+
+                    case "mouseout":
+                        this.style.color='blue';
+                        break;
+                }
+            }*/
+            
+        </script>
+    </body>
