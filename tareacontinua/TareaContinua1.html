@@ -2,27 +2,39 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title> instance y typeof </title>
         
     </head>
     <body>
         <script>
-            var nombre="Maxwell Wright";
-            var telefono="(0191) 719 6495";
-            var correo="Curabitur.egestas.nunc@nonummyac.co.uk";
+            var contactos=[
+                {nombre:"Maxwell Wright",
+                telefono:"(0191) 719 6495",
+                correo:"Curabitur.egestas.nunc@nonummyac.co.uk"},
 
-            var nombre2="Raja Villlareal";
-            var telefono2="0866 398 2895";
-            var correo2="posuere.vulputate@sed.com";
+                {nombre:"Raja Villlareal",
+                telefono:"0866 398 2895",
+                correo:"posuere.vulputate@sed.com"},
 
-            var nombre3="Helen Richards";
-            var telefono3="0800 1111";
-            var correo3="librero@convallis.edu";
+                {nombre:"Helen Richards",
+                telefono:"0800 1111",
+                correo:"librero@convallis.edu",}
+            ]
+            var contacto4 = 
+            {
+                nombre: "Maisie Haley",
+                telefono: "0913 531 3030",
+                correo: "risus.Quisque@urna.ca"
+            };
 
-            console.log(nombre+"\\"+telefono+"\\"+correo);
-            console.log(nombre2+"\\"+telefono2+"\\"+correo2);
-            console.log(nombre3+"\\"+(telefono3+7)+"\\"+correo3);
+            //subir contacto al array
+            contactos.push(contacto4);
+            
+            for(i=0; i<=contactos.length;i++){
+                if (i==0 || i==(contactos.length-1))//si es i es 0 (primer contacto) o i es el ultimo contacto mostrar
+                console.log(contactos[i].nombre + " / " + contactos[i].telefono + " / " + contactos[i].correo);
+            }
         </script>
 </body>
 </html>

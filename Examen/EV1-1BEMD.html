@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> funciones dentro de var </title>
+    </head>
+    <body>
+        <script>
+            const direccion=['n','s', 'o', 'e'];
+            var caminata=""; //cadena de letras
+
+            function pasear(minutos){
+                if (minutos>6 && minutos<16)
+                {
+                    direccionAleatoria()
+                    while(!caminata.includes(direccion)){
+                        caminata = ""; // se reinicia si no lo es
+                        direccionAleatoria();
+                    }
+                    return caminata;
+                }//if
+            }
+            function direccionAleatoria(){
+                for (let i = 0; i < minutos; i++) 
+                    { //cadena aleatoria
+                        let dircAleatoria  = direccion[Math.floor(Math.random() * direccion.length)];//aleatoria con las variable dentro del array de direcciones
+                        caminata=caminata+ dircAleatoria;
+                    }//for
+            }
+            alert(pasear(8));
+            
+        </script>
+    </body>
+</html>
