@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> History </title>
+    </head>
+    <body>
+        <input id="boton"value="Púlsame" type="button"/>
+        <script>
+            const enlace = document.getElementById('boton');
+            enlace.addEventListener('click', (event) => {
+                // Evitar el comportamiento predeterminado de redirigir al hacer clic en el enlace
+            event.preventDefault();
+                // Realizar alguna lógica personalizada aquí después de prevenir el comportamiento predeterminado
+            });
+
+            var cont=0;
+            document.getElementById("boton").addEventListener("mousedown", pulsar);
+
+            function pulsar(e){
+
+                event.preventDefault();
+                if(e.button==0) cont++;
+                else if (e.button==2) cont--;
+
+                console.log(cont);
+            }
+        </script>
+    </body>
+</html>
