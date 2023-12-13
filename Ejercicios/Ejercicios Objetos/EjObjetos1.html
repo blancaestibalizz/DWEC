@@ -16,8 +16,15 @@
 
             const mayores25=usuarios.filter(valor=>valor.edad>25);
             console.log(mayores25);
+
             const duplicar=mayores25.map(valor=>valor.edad*2)
             console.log(duplicar);
+
+            const duplicar2=usuarios.map(valor=>valor.edad*2)
+            console.log(duplicar2);
+            const sumar=duplicar2.reduce((a, b) => a + b, 0)
+            console.log(sumar);
+            
         </script>
     </body>
 </html>
