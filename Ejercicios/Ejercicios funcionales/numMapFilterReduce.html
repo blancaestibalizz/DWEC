@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> map, filter y reduce </title>
+    </head>
+    <body>
+        <script>
+            const numeros = [1, 2, 3, 4, 5];
+           
+            //numeros duplicados
+            const duplicar=numeros.map(numero=>numero*2)
+            console.log(duplicar)
+            //numeros pares
+            const pares=numeros.filter(numero=>numero%2==0);
+            console.log(pares)
+            //suma
+            const suma=numeros.reduce((a, b) => a + b, 0);
+            console.log(suma)
+        </script>
+    </body>
+</html>

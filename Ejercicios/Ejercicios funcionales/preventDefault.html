@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> PreventDefault </title>
+    </head>
+    <body>
+        <form id="formulario">
+            <label name="nombre">Nombre: </label>
+            <input type="text" name="nombre">
+            <input id="boton" value="Enviar" type="submit"/>
+        </form>
+        <script>
+            const enlace = document.getElementById('miEnlace');
+            enlace.addEventListener('click', (event) => {
+            // Evitar el comportamiento predeterminado de redirigir al hacer clic en el enlace
+            event.preventDefault();
+            // Realizar alguna lógica personalizada aquí después de prevenir el comportamiento predeterminado
+            });
+
+            document.getElementById("form").addEventListener("submit", function (e){
+                event.preventDefault();
+                alert()
+            });
+            
+        </script>
+    </body>
+</html>
