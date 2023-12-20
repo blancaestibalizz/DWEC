@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar tamaño y color</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1 id="titulo">Este es un título dinámico</h1>
+    </div>
+    <br/>
+    <button id="cambiarColor">Cambiar Color</button>
+    <button id="cambiarTamaño">Cambiar Tamaño</button>
+   
+    <script>
+        window.addEventListener("load", inicio);
+
+        function inicio() {
+            document.getElementById("cambiarColor").addEventListener("click", cambioColor);
+            document.getElementById("cambiarTamaño").addEventListener("click", cambiarTamaño);
+        }
+
+        function cambioColor() {
+            document.getElementById("titulo").style.color = obtenerColorAleatorio();
+        }
+
+        function obtenerColorAleatorio() {
+            var numero1 = Math.floor(Math.random() * 256);
+            var numero2 = Math.floor(Math.random() * 256);
+            var numero3 = Math.floor(Math.random() * 256);
+            return 'rgb(' + numero1 + ',' + numero2 + ',' + numero3 + ')';
+        }
+        
+        function cambiarTamaño() {
+            var numero = Math.floor(Math.random() * 100);
+            document.getElementById("titulo").style.fontSize= numero+"px";
+        }
+    </script>
+    </body>
+</html>
