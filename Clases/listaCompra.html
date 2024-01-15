@@ -19,20 +19,33 @@
         }
 
         function añadirLista(){
-            var parrafo=document.createElement("li");
-            var texto = document.createTextNode(document.getElementById("texto").value);
-            parrafo.appendChild(texto);
+            var elementos=[];
+            var texto = document.getElementById("textoC").value;
+            elementos.push(texto);
+            elementos.sort();
+            
             var cont=document.getElementById("lista");
-            cont.appendChild(parrafo);
+            cont.innerHTML="";
+           
+            elementos.forEach(function(elemento)
+            {
+                var parrafo=document.createElement("li");
+                var texto = document.createTextNode(elemento);
+                parrafo.appendChild(texto);
+                cont.appendChild(parrafo);
+            }
+            );
+            //document.getElementById("texto").value="";
         }
 
 
     </script>
     <div id="div1">
-        <ul id="lista">
+        <h3>Lista de la compra:</h3>
+        <ul id="lista"> 
 
         </ul>
-        <textarea id="texto"></textarea>
+        <textarea id="textoC"></textarea>
         <br/>
     </div>
     <button id="añadir">Añadir a la lista</button>
