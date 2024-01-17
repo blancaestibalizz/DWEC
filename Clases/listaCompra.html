@@ -1,54 +1,48 @@
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <title>Document Object Model</title>
-    
-</head>
-
-<body>
-
-   
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
     <script>
-        //implementar la funcionalidad similar a la lista de la compra.
-        // Al pulsar rl boton añadir, se inserta el contenido del cuadro de texto a la lista superior de forma ordenada. 
-        window.addEventListener("load", inicio);
-
-        function inicio(){
-            document.getElementById("añadir").addEventListener("click", añadirLista);
-        }
-
-        function añadirLista(){
-            var elementos=[];
-            var texto = document.getElementById("textoC").value;
-            elementos.push(texto);
-            elementos.sort();
-            
-            var cont=document.getElementById("lista");
-            cont.innerHTML="";
-           
-            elementos.forEach(function(elemento)
-            {
-                var parrafo=document.createElement("li");
-                var texto = document.createTextNode(elemento);
-                parrafo.appendChild(texto);
-                cont.appendChild(parrafo);
-            }
-            );
-            //document.getElementById("texto").value="";
-        }
+      window.addEventListener("load", inicio);
 
 
+      const lista = [];
+
+      function inicio() {
+        document
+          .getElementById("anadirLista")
+          .addEventListener("click", anadirLista);
+      }
+
+      function anadirLista() {
+        var nuevoProducto = document.getElementById("texto").value;
+
+        lista.push(nuevoProducto);
+        lista.sort();
+
+        var cont = document.getElementById("div1");
+        cont.innerHTML = "";
+
+        lista.forEach(function (elemento) {
+          var producto = document.createElement("li");
+          var texto = document.createTextNode(elemento);
+          producto.appendChild(texto);
+          cont.appendChild(producto);
+        });
+
+        // Limpiar el campo de texto después de añadirlo a la lista
+        document.getElementById("texto").value = "";
+
+      }
     </script>
-    <div id="div1">
-        <h3>Lista de la compra:</h3>
-        <ul id="lista"> 
-
-        </ul>
-        <textarea id="textoC"></textarea>
-        <br/>
-    </div>
-    <button id="añadir">Añadir a la lista</button>
-</body>
-
+    <div id="div1"></div>
+    <br />
+    <textarea id="texto"></textarea>
+    <br />
+    <button id="anadirLista">Añadir a la lista</button>
+  </body>
 </html>
