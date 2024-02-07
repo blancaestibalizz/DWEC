@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+    <div id="contAPI"></div>
+  <body>
+    <script>
+        async function fetchDatos(){
+            try{
+           
+           const ul=document.getElementById('authors');
+           const url= "https://randomuser.me/api/?results=10";
+           fetch(url)
+                .then((resp)=>res.json())
+                .then(function(data){
+                    let authors=data.results;
+                    return authors.map(function(author){
+                        let li=createNode('li');
+                        let ul=createNode('ul');
+                        let img=createNode('img');
+                        let span= createNode('span');
+                        img.src=author.picture.medium;
+                        span.innerHTML=`${author.name.first}${author.name.last}`;
+                        append(li, img);
+                        append(li, span);
+                        append(ul, li);
+                    })
+                    
+                })
+              
+                
+            }//try
+            catch(err){
+                console.log("Error recibido: "+err);
+            }
+        }
+        fetchDatos();
+            
+            
+    </script>
+  </body>
+</html>

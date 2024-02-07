@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title>  </title>
+    </head>
+    <div id="contenedor">
+        <button id="boton">Boton</button>
+    </div>
+    <body>
+        <style>
+             body *{
+                margin: 10px;
+                border: 1px solid blue;
+            }
+        </style>
+       
+        <script>
+            document.getElementById('contenedor').addEventListener('click', function (){
+                console.log('Contenedor hizo click');
+            });
+            document.getElementById('boton').addEventListener('click', function (){
+                console.log('Boton hizo click');
+                event.stopPropagation(); //con esto copnseguimos que no se haga la propagación y no sale el 'Contenedor hizo click'
+            });
+        </script>
+    </body>
+</html>

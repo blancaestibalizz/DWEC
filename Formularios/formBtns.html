@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Form basico </title>
+    </head>
+    <body>
+        <form action="mailto:brainersapp@gmail.com" id="miForm">
+            Nombre:<input id="primero" type="text" name="nombre" checked><br/>
+            Apellidos<input type="text" name="apellidos"><br/>
+            DNI: <input type="text" name="DNI"><br/>
+            Sexo: <br/>
+            <input type="radio" name="genero" value="masculino" checked="checked"> Hombre<br/>
+            <input type="radio" name="genero" value="femenino"> Mujer<br/>
+            <input type="checkbox" name="publicidad" value="publi"> Enviar publicidad<br/>
+            Incluir mi foto:<input type="file" name="foto"> <br/>
+          
+            <input type="submit" id="btn_enviar" name="enviar" value="Guardar cambios" >
+            <input id="btn_borrar" type="reset" name="borrar" value="Borrar los datos introducidos"> 
+        </form>
+        <script>
+            window.addEventListener("load", inicio);
+
+            function inicio(){
+                document.getElementById("miForm").addEventListener("submit", enviar);
+                document.getElementById("btn_borrar").addEventListener("click", borrar);
+
+                function enviar(){
+                    var confirmar=confirm("¿Estas seguro de enviar este formulario?");
+                    if (confirmar===true)
+                    {
+                        document.getElementById("btn_enviar").value="Enviado";
+                        document.getElementById("btn_enviar").disabled = true;
+                    }
+                }
+                function borrar(){
+                    document.getElementById("primero").focus();
+                }
+
+            }
+
+        </script>
+    </body>
+    </html>

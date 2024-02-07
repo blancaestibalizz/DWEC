@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Document Object Model</title>
+    <style>
+    </style>
+    <script>
+        window.addEventListener("load", inicio);
+
+        function inicio() {
+            document.getElementById("cambiar").addEventListener("click", cambiarTxt);
+        }
+
+        function cambiarTxt() {
+            var boton = document.getElementById("cambiar");
+            var parrafo = document.getElementById("parrafo");
+
+            if (boton.value === "Encender máquina") {
+                parrafo.textContent = "Máquina encendida";
+                boton.value = "Apagar máquina";
+            } else {
+                parrafo.textContent = "Máquina apagada";
+                boton.value = "Encender máquina";
+            }
+        }
+        /*
+            <form>
+                
+            */
+    </script>
+</head>
+
+<body>
+    <p id="parrafo">Máquina apagada</p>
+    <input id="cambiar" type="button" value="Encender máquina">
+</body>
+
+</html>

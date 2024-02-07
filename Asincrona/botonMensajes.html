@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="boton">Pulsa</button>
+    <div id="bloque"></div>
+    <script>
+        document.getElementById("boton").addEventListener("click", pulsar);
+        const cont=0;
+        function pulsar(){
+            cont++;
+            probarPromise();
+            
+        }
+        function probarPromise(){
+            document.getElementById("bloque").innerHTML=cont+"Código Síncrono";
+            const miPromesa=new Promise((resolve, reject)=>
+            {
+                document.getElementById("bloque").innerHTML=cont+"Esta parte es asíncrona"
+                setTimeout(() => {
+                }, Math.random() * 4000 + 1000);
+            })
+            miPromesa
+                .then(prom=>document.getElementById("bloque").innerHTML=cont+"Código asíncrono terminado")
+                document.getElementById("bloque").innerHTML=cont+"Código Síncrono terminado";
+            }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+        <title> Tipos de datos </title>
+    </head>
+    <body>
+        <form>
+            
+        </form>
+        <script>
+            var formulario1= document.getElementById("miForm")
+            var formulario2= document.form["miForm"];
+            var formulario3= document.getElementsByTagName("form")[1];
+            var formulario4=document.forms;
+
+            window.onload=iniciar;
+            function iniciar(){
+                document.getElementById("enviar").addEventListener('click', validar,false);
+            }
+            function validarNombre(){
+                var elemento=document.getElementById("nombre");
+                if(elemento.value=""){
+                    alert("El nombre no puede estar vacio");
+                    return false;
+                }
+                return true;
+            }
+            
+            function validarTelefono(){
+                var elemento=document.getElementById("telefono");
+                if(isNaN(elemento.value)){
+                    alert("El telefono tiene que ser un número");
+                    return false;
+                }
+                return true;
+            }
+            function validar(){
+                if(validarNombre()&& validarTelefono()&& confirm("Estoy seguro de enviar el formulario"))
+                    return true
+                else
+                {
+                    e.preventDefault();
+                    return false
+                }   
+            }
+            //elements es cunado se recorren varios [] sino es element
+        </script>
+    </body>
+    </html>
