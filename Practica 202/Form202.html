@@ -4,15 +4,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
         <title> Tipos de datos </title>
+        <style>
+            body{
+                text-align: center;
+            }
+            
+
+            fieldset{
+                width: 50px;
+                padding: 40px;
+                margin: 0 auto;
+            }
+            legend {
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <form>
             <fieldset>
                 <legend>Datos personales</legend>
                 Introduce tu nombre:<input type="text" name="nombre" ><br/>
-                
+                Introduce tu NIF:<input type="text" name="nif" ><br/>
                 Mensaje <br/>
                 <textarea name="mensaje"></textarea>
+                <!--Añadir un contador para el campo Mensaje que indique al usuario los caracteres -->
             </fieldset>
 
             <br/> Elige un color: <br/>
@@ -30,6 +46,18 @@
                 <option>Empresa</option>
                 <option>Ingles</option>
             </select> <br/>
+            <!--Al menos 5 asignaturas-->
+
+            Fecha de matriculación:<input type="date" name="fecha" ><br/>
+
+            Selecciona el día preferente:<br>
+            <select id="cursoAcadémico" >
+                <option value="20-21">Lunes</option>
+                <option value="21-22">Martes</option>
+                <option value="22-23">Miercoles</option>
+                <option value="23-24">Jueves</option>
+                <option value="Añadir">Añadir curso académico</option> <!--Hacerlo en casa-->
+            </select> <br/>
 
             Selecciona los días con disponibilidad:<br>
             <input type="checkbox" name="dias" value="lunes">Lunes<br>
@@ -37,6 +65,7 @@
             <input type="checkbox" name="dias" value="miercoles">Miercoles<br>
             <input type="checkbox" name="dias" value="jueves">Jueves<br>
             <input type="checkbox" name="dias" value="viernes">Viernes<br>
+            <!--checkbox para seleccionar/deseleccionar todos los días con disponibilidad.-->
 
             Selecciona el día preferente:<br>
             <select id="diaPreferente" >
@@ -51,6 +80,15 @@
             <button type="reset" name="nuevo"> Comenzar a rellenar de nuevo </button>
             <button type="button" name="boton"> Haz click sobre mi </button>
         </form>
+        <script>
+            /*    • Ningún elemento vacío
+    • NIF correcto ( comprobar letra)
+    • Mensaje: de entre 2 y 500 caracteres
+    • Color por defecto: azul
+    • Días: seleccionar al menos dos
+    • Preferente: por defecto marcado el lunes
+    • Botón de “Haz click sobre mí”: ir a Google.com*/
+        </script>
        
     </body>
     </html>
